@@ -1,1 +1,1 @@
-# rum-js
+# rum-client-js

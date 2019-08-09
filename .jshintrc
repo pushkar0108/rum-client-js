@@ -1,0 +1,12 @@
+{
+  "esversion": 6,
+  "node": true,
+  "globalstrict": true,
+  "browser": true,
+  "jasmine": true,
+  "predef": [
+    "require",
+    "define",
+    "notify"
+  ]
+}
