@@ -1,6 +1,6 @@
 "use strict";
 
-export default class TrackPerformance {
+class TrackPerformance {
   constructor({
     trackUrl,
     threshold = 6000,
@@ -162,3 +162,6 @@ export default class TrackPerformance {
     }, []);
   }
 }
+
+// export a global variable to access later
+window.TrackPerformance = TrackPerformance;

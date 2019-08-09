@@ -1,6 +1,6 @@
 {
   "name": "rum-client-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "track RUM",
   "main": "index.js",
   "scripts": {
