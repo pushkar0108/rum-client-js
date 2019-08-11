@@ -1,7 +1,7 @@
 {
   "name": "rum-client-js",
-  "version": "1.0.2",
-  "description": "track RUM",
+  "version": "1.0.3",
+  "description": "A light weighted client side library to enable RUM(Real User Monitoring) for web applications",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
