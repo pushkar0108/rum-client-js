@@ -1,5 +1,3 @@
-# rum-client-js v1.0.3
-
 A light weighted client side library to enable RUM(Real User Monitoring) for web applications.
 
 ## Installation
