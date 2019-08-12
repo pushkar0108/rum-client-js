@@ -1,6 +1,9 @@
 "use strict";
 
 class TrackPerformance {
+  queuedEntries: any[];
+  options: any;
+
   constructor({
     trackUrl,
     threshold = 6000,
@@ -52,7 +55,7 @@ class TrackPerformance {
     };
   }
 
-  handleEntries(entries) {
+  handleEntries(entries: any) {
     let {
       trackUrl,
       excludeKeys,
@@ -164,4 +167,5 @@ class TrackPerformance {
 }
 
 // export a global variable to access later
-window.TrackPerformance = TrackPerformance;
+
+(window as any).TrackPerformance = TrackPerformance;
