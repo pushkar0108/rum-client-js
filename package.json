@@ -4,6 +4,8 @@
   "description": "A light weighted client side library to enable RUM(Real User Monitoring) for web applications",
   "main": "index.js",
   "scripts": {
+    "dev-build": "webpack --mode development",
+    "prod-build": "NODE_ENV=production webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,5 +13,19 @@
     "url": "https://github.com/pushkar0108/rum-client-js.git"
   },
   "author": "Pushkar Goel",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [
+    "monitoring",
+    "rum",
+    "real user monitoring",
+    "performance",
+    "web metrics"
+  ],
+  "devDependencies": {
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  }
 }

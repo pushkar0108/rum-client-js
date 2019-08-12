@@ -11,7 +11,7 @@ $ npm i --save rum-client-js
 
 ## Quick Start
 ```js
-// 1. Load the script in the head section of the page and 
+// 1. Load the script in the head section of the page
 <script src="./path-to-script"></script>
 
 // 2. Add the below mentioned code after the script
