@@ -13,8 +13,10 @@ declare class TrackPerformance {
     static chunk(array: any[], size: number): any;
     queuedEntries: any[];
     options: ITrackPerformanceOptions;
+    intervalId: number;
     constructor({ trackUrl, threshold, batchSize, excludeKeys, excludeHosts, parserCb, filterCb, addAdditionalData }: ITrackPerformanceOptions);
     handleEntries(entries: any[]): void;
     sendToServer(): void;
+    stop(): void;
 }
 export default TrackPerformance;

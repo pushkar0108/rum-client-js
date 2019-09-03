@@ -71,6 +71,7 @@ class TrackPerformance {
   }
   queuedEntries: any[];
   options: ITrackPerformanceOptions;
+  intervalId: number;
 
   constructor({
     trackUrl,
@@ -110,7 +111,7 @@ class TrackPerformance {
 
     // tslint:disable-next-line
     console.log("Setting up setInterval to push track data");
-    window.setInterval(() => {
+    this.intervalId = window.setInterval(() => {
       if (this.queuedEntries.length) {
         this.sendToServer();
         this.queuedEntries = [];
@@ -187,6 +188,11 @@ class TrackPerformance {
         });
       });
     });
+  }
+
+  stop() {
+    clearInterval(this.intervalId);
+    this.intervalId = null;
   }
 }
 
