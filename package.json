@@ -1,6 +1,6 @@
 {
   "name": "rum-client-js",
-  "version": "1.0.6",
+  "version": "1.1.6",
   "author": "Pushkar Goel",
   "license": "ISC",
   "description": "A light weighted client side library to enable RUM(Real User Monitoring) for web applications",

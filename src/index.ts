@@ -4,6 +4,7 @@ export interface ITrackPerformanceOptions {
   batchSize?: number;
   excludeKeys: string[];
   excludeHosts: string[];
+  includeHosts: string[];
   parserCb: any;
   filterCb: any;
   addAdditionalData: any;
@@ -79,6 +80,7 @@ class TrackPerformance {
     batchSize = 50,
     excludeKeys = [],
     excludeHosts = [],
+    includeHosts = [],
     parserCb,
     filterCb,
     addAdditionalData
@@ -90,6 +92,7 @@ class TrackPerformance {
       batchSize,
       excludeKeys,
       excludeHosts,
+      includeHosts,
       parserCb,
       filterCb,
       addAdditionalData
@@ -130,12 +133,18 @@ class TrackPerformance {
       trackUrl,
       excludeKeys,
       excludeHosts,
+      includeHosts,
       parserCb,
       filterCb
     } = this.options;
     entries = entries.map((entry) => entry.toJSON());
-    entries = entries.filter((entry) => entry.name.indexOf(trackUrl) === -1 &&
-      !excludeHosts.some((host) => entry.name.indexOf(host) > -1));
+    entries = entries.filter((entry) => {
+      let flag = entry.name.indexOf(trackUrl) === -1;
+      flag = includeHosts.length > 0 ?
+        (flag && includeHosts.some((host) => entry.name.indexOf(host) > -1)) :
+        (flag && !excludeHosts.some((host) => entry.name.indexOf(host) > -1));
+      return flag;
+    });
     entries = entries.map(TrackPerformance.computeMetrics);
 
     if (parserCb && typeof parserCb === "function") {
@@ -159,7 +168,7 @@ class TrackPerformance {
   }
 
   sendToServer() {
-    const { batchSize, trackUrl, addAdditionalData } = this.options;
+    const { batchSize = 50, trackUrl, addAdditionalData } = this.options;
     const entryChunks = TrackPerformance.chunk(this.queuedEntries, batchSize);
     let promise = Promise.resolve();
     entryChunks.forEach((entryChunk: any[], index: number) => {
@@ -192,7 +201,7 @@ class TrackPerformance {
 
   stop() {
     clearInterval(this.intervalId);
-    this.intervalId = null;
+    this.intervalId = 0;
   }
 }
 

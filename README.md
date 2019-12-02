@@ -23,7 +23,10 @@ $ npm i --save rum-client-js
         trackUrl: `${window.location.origin}/api/track`, // Endpoint at which collected data is sent
         batchSize: 50, // max entry batch size sent to server
         threshold: 3000, // in ms
-        excludeHosts: [ // skip entries from these hosts
+        includeHosts: [ // consider entries from these hosts only
+            'myapp.com'
+        ],
+        excludeHosts: [ // skip entries from these hosts (only works if includeHosts is not given)
             'fonts.googleapis.com',
             'themes.googleusercontent.com',
             'fonts.gstatic.com',
@@ -43,7 +46,7 @@ $ npm i --save rum-client-js
             return {
                 tags: {
                     "user-agent": navigator.userAgent,
-                    "app-version": 1.0.0
+                    "app-version": "1.0.0"
                 }
             };
         },
