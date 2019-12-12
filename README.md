@@ -73,3 +73,8 @@ Library internally compute and expose below mentioned metrics for each entry.
     11. DOM Content Load Time - entry.DOMContentLoadTime // For entry.entryType === "navigation"
     12. Page Load Time - entry.pageLoadTime // For entry.entryType === "navigation"
 ```
+
+## Monitor Metrics
+The collected data will be available at the configured URL (trackUrl). You can use the data points to create UI as per requirements. Below is one such implementation where I have piped the data points to a Data Source(Prometheus) and plotted the metrics against a UI(Grafana)
+
+![Metrics](https://raw.githubusercontent.com/pushkar0108/rum-client-js/master/resources/metrics.jpg)
