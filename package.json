@@ -1,6 +1,6 @@
 {
   "name": "rum-client-js",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "author": "Pushkar Goel",
   "license": "ISC",
   "description": "A light weighted client side library to enable RUM(Real User Monitoring) for web applications",
@@ -20,7 +20,7 @@
     "typescript": "^3.5.3",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.11.0"
   },
   "repository": {
     "type": "git",
